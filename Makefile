@@ -1,13 +1,13 @@
-CFLAGS = -std=c++17 -O2
+CFLAGS = -std=c++17 -O0 -g # -DNDEBUG
 LDFLAGS = -lglfw -lvulkan -ldl -lpthread -lX11 -lXxf86vm -lXrandr -lXi
 
 VulkanTest: main.cpp
-	g++ $(CFLAGS) -o VulkanTest main.cpp $(LDFLAGS)
+	g++ $(CFLAGS) -o VulkanTriangle main.cpp $(LDFLAGS)
 
 .PHONY: test clean
 
-test: VulkanTest
-	./VulkanTest
+test: VulkanTriangle
+	./VulkanTriangle
 
 clean:
-	rm -f VulkanTest
+	rm -f VulkanTriangle
